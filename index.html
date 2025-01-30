@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator 1.2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Password Generator</h1>
+        <div class="output">
+            <div class="output__text-container">
+                <p class="output__text"></p>
+            </div>
+            <button class="btn1 btn1--copy">
+                <img id="copy" src="./images/copy-regular.svg" alt="Copy button">
+            </button>
+            <button class="btn1 btn1--regenerate">
+                <img id="regenerate" src="./images/rotate-solid.svg" alt="Regenerate button">
+            </button>
+        </div>
+        <div class="slider">
+            <p>Length: <span id="pwLength">8</span></span.></p>
+            <input class="slider__input" type="range" min="8" max="128" value="8">
+        </div>
+        <div class="buttons">
+            <button id="lower" class="btn2 btn2--lowercase">LOWERCASE</button>
+            <button id="upper" class="btn2 btn2--uppercase">UPPERCASE</button>
+            <button id="nums" class="btn2 btn2--numbers">NUMBERS</button>
+            <button id="symbols" class="btn2 btn2--symbols">SYMBOLS</button>
+        </div>
+    </div>    
+
+    <script src="script.js"></script>
+</body>
+</html>

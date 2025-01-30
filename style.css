@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --ff: 'Rubik', sans-serif;
+    --fs-regular: 1rem;
+    --fs-headings: 1.5rem;
+    --fs-password: 1.2rem;
+    --fw-regular: 400;
+    --fw-headings: 700;
+    --fw-password: 500;
+    --fc-primary: black;
+    --bg-primary: #2973B2;
+    --bg-wrapper: #E9EFFD;
+    --bg-btn1: rgb(200, 200, 200);
+    --bg-btn-active: #09005D;
+    --default-br: 8px;
+    --wrapper-br: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--ff);
+    font-size: var(--fs-regular);
+    font-weight: var(--fw-regular);
+    color: var(--fc-primary);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 100vw;
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    width: clamp(320px, 90vw, 1000px);
+    margin-top: 4rem;
+    padding-inline: 8px;
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+    background-color: var(--bg-wrapper);
+    border-radius: var(--wrapper-br);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.output {
+    display: flex;
+    gap: 4px;
+    width: 80%;
+    background-color: white;
+    border-radius: var(--default-br);
+}
+.output__text-container {
+    flex: 1;
+    overflow: auto;
+}
+.output__text {
+    line-height: 40px;
+    white-space: nowrap;
+    font-size: var(--fs-password);
+    font-weight: var(--fw-password);
+    padding-inline: 4px;
+}
+.btn1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: var(--bg-btn1);
+    border: none;
+    border-radius: var(--default-br);
+    cursor: pointer;
+}
+.btn1 img {
+    width: min(8vw, 30px);
+    height: auto;
+}
+
+.buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+.btn2 {
+    width: max(140px, 12vw);
+    padding: 0.5rem;
+    background-color: var(--bg-primary);
+    border: none;
+    border-radius: var(--default-br);
+    font-size: var(--fs-password);
+    font-weight: var(--fw-regular);
+    color: white;
+    cursor: pointer;
+    transition: scale 200ms, background-color 100ms;
+    &:hover {
+        scale: 1.08;
+    }
+}
+
+.active {
+    background-color: var(--bg-btn-active);
+}
+
+.slider {
+    width: 80%;
+}
+.slider__input {
+    width: 100%;
+}
+.slider > p {
+    font-size: var(--fs-headings);
+    font-weight: var(--fw-regular);
+}
+#pwLength {
+    font-size: var(--fs-headings);
+    font-weight: var(--fw-headings);
+}
+
+@media (max-width: 560px) {
+    h1 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .buttons {
+        flex-wrap: wrap;
+    }
+    .btn2 {
+        flex: 1 1 calc(50% - 0.75rem);
+        min-width: 140px;
+        max-width: calc(50%);
+    }
+    .output {
+        width: 90%;
+    }
+    .slider {
+        width: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    .buttons {
+        flex-direction: column;
+    }
+    .output {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .btn2:hover {
+       scale: initial; 
+    }
+}
