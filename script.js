@@ -55,6 +55,10 @@ function randomSort(password) {
  * @returns { String }
  */
 function generatePassword(length, activeButtons) {
+    // Ošetření minima a maxima u délky
+    if (length < 8) length = 8;
+    if (length > 128) length = 128;
+
     let password = [];
     const remainingLength = length - activeButtons.length;
 
