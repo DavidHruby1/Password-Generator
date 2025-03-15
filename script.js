@@ -19,8 +19,6 @@ const symbolsButton = document.getElementById("symbols");
 let lengthElement = document.getElementById("pwLength");
 let activeCount = 0;
 
-
-
 //
 // Functions
 //
@@ -55,24 +53,25 @@ function randomSort(password) {
  * @returns { String }
  */
 function generatePassword(length, activeButtons) {
-    // Ošetření minima a maxima u délky
+    // minimum and maximum length
     if (length < 8) length = 8;
     if (length > 128) length = 128;
 
     let password = [];
     const remainingLength = length - activeButtons.length;
 
-    // První se vždy vybere aspoň jeden znak z aktivních kategoií
+    // It always picks atleast one character from every checked category
     for (const i of activeButtons) {
         password.push(randomChoice(dictionary[i]));
     }
 
-    // Poté se už vybírá čistě náhodně
+    // Then it picks randomly
     for (let i = 0; i < remainingLength; i++) {
         const pick = randomChoice(activeButtons);
         password.push(randomChoice(dictionary[pick]));
     }
 
+    // Applying random sort on top of the random password to make it more random
     return randomSort(password).join("");
 }
 
@@ -89,8 +88,6 @@ function getActiveButtons() {
 
     return activeButtons; 
 }
-
-
 
 //
 // Events
